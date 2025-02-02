@@ -124,3 +124,13 @@ This provides a user-friendly interface to interact with the API.
 🧪 Running Tests
 
 To run unit tests:
+
+$ mvn test
+
+🚀 Future Enhancements
+
+Implement JWT-based authentication
+
+Add email verification during registration
+
+Deploy to AWS/GCP/Kubernetes
