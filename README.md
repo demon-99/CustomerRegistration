@@ -1,136 +1,90 @@
-User Registration API
 
-📌 Overview
+# 📌 Customer Registration API
 
 This project is a Spring Boot-based User Registration and Authentication API. It provides functionalities for:
 
-User registration
+- User registration
+- User authentication
+- Role-based access control (RBAC) using Spring Security
+- API documentation using Swagger
+- Containerization using Docker
 
-User authentication
+---
 
-Role-based access control (RBAC) using Spring Security
 
-API documentation using Swagger
+## 🚀 Tech Stack
 
-Containerization using Docker and Docker Compose
+- **Java 17**
+- **Spring Boot** (Spring Security, Spring Data JPA, Spring Web)
+- **H2** (In Memory Database)
+- **Springdoc OpenAPI** (API Documentation)
+- **Docker & Docker Compose**
+- **JUnit & Mockito** (for Unit Testing)
 
-🚀 Technologies Used
 
-Java 17
+## 🛠️ Setup and Installation
 
-Spring Boot (Spring Security, Spring Data JPA, Spring Web)
+### 1️⃣ Prerequisites
 
-H2 / PostgreSQL Database
+Make sure you have the following installed on your system:
 
-Springfox Swagger (API Documentation)
+- **JDK 17+**: To run the Spring Boot application.
+- **Maven**: For building the project.
+- **Docker**: For containerization.
+- **Postman** (optional): For API testing.
 
-Docker & Docker Compose
 
-JUnit & Mockito (for Unit Testing)
 
-🛠️ Setup and Installation
 
-1️⃣ Prerequisites
-
-Ensure you have installed:
-
-JDK 17+
-
-Maven
-
-Docker
-
-Postman (for API testing)
-
-2️⃣ Clone the Repository
-
-$ git clone https://github.com/your-repo-url.git
+### 2️⃣ Clone the Repository
+```bash
+$ git clone https://github.com/demon-99/CustomerRegistration.git
 $ cd User_Registration
-
-3️⃣ Build the Project
-
+```
+### 3️⃣ Build the Project
+Build the project using Maven.
+```bash
 $ mvn clean package
+```
 
-4️⃣ Run the Application (Without Docker)
+### 4️⃣ Run the Application (Without Docker)
 
+To run the application locally without Docker, use:
+```bash
 $ mvn spring-boot:run
+```
+The application will start on http://localhost:8080.
 
-The application should start on http://localhost:8080.
-
-🐳 Running with Docker
-
-1️⃣ Build Docker Image
-
+### 5️⃣ Running with Docker
+Build the Docker image for the application:
+```bash
 $ docker build -t user-registration-app .
+```
 
-2️⃣ Start the Application using Docker Compose
+Run the application in a Docker container:
+```bash
+$ docker run -p 8080:8080 user-registration-app
+```
+The application will start on http://localhost:8080.
 
-$ docker-compose up -d
+## 🔗 API Endpoints
 
-3️⃣ Stop the Containers
+| Method  | Endpoint                   | Description            | Access  |
+|---------|-----------------------------|------------------------|---------|
+| **POST**  | `/api/users/register`        | Register a new user     | Public  |
+| **POST**  | `/api/users/validate?email=johndoe@example.com&password=securepassword`        | Validate user login     | Public  |
+| **GET**   | `/api/users/all`             | Get all users           | Admin   |
+| **DELETE** | `/api/users/delete/{email}`  | Delete a user by email  | Admin   |
 
-$ docker-compose down
+## 📜 Swagger API Documentation
 
-🔗 API Endpoints
-
-Method
-
-Endpoint
-
-Description
-
-Access
-
-POST
-
-/api/users/register
-
-Register a new user
-
-Public
-
-POST
-
-/api/users/validate
-
-Validate user login
-
-Public
-
-GET
-
-/api/users/all
-
-Get all users
-
-Admin
-
-DELETE
-
-/api/users/delete/{email}
-
-Delete a user by email
-
-Admin
-
-📜 Swagger API Documentation
-
-Once the application is running, visit:
+Once the application is running, visit the following URL to interact with the API through a user-friendly interface:
 
 http://localhost:8080/swagger-ui/index.html
 
-This provides a user-friendly interface to interact with the API.
-
-🧪 Running Tests
-
-To run unit tests:
-
+http://localhost:8080/v3/api-docs
+## 🧪 Running Tests
+To run unit tests, execute the following command:
+```bash
 $ mvn test
-
-🚀 Future Enhancements
-
-Implement JWT-based authentication
-
-Add email verification during registration
-
-Deploy to AWS/GCP/Kubernetes
+```
