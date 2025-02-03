@@ -39,7 +39,7 @@ Make sure you have the following installed on your system:
 ### 2️⃣ Clone the Repository
 ```bash
 $ git clone https://github.com/demon-99/CustomerRegistration.git
-$ cd User_Registration
+$ cd CustomerRegistration
 ```
 ### 3️⃣ Build the Project
 Build the project using Maven.
